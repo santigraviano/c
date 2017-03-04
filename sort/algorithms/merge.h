@@ -78,7 +78,7 @@ Node* mergeHalves (Node* left, Node* right)
 
 	/*
 		If there is a last value
-		Or if an entire half has been appended 
+		Or if an entire half has been appended
 	*/
 	if (left->next != NULL || right->next != NULL)
 	{

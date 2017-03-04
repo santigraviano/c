@@ -23,12 +23,12 @@ int main (void)
 	{
 		printf("====> MENU <====\n");
 		printf("0) Quit\n");
-		printf("1) Push a value to the list\n");
+		printf("1) Add a value to the list\n");
 		printf("2) Search a value in the list\n");
 		printf("3) Delete a value in the list\n");
-		printf("4) Sort the list with bubble sort\n");
+		printf("4) Sort the list\n");
 		printf("5) Print the list\n");
-		printf("6) Return the number of items in the list\n");
+		printf("6) Count the items on the list\n");
 		scanf("%i", &input);
 
 		switch (input)
@@ -41,27 +41,27 @@ int main (void)
 
 			case 1:
 				operation = "push";
-				printf("Where your value will be pushed?\n");
+				printf("Where your value will be added?\n");
 				printf("0) At the start of the list\n");
 				printf("1) At the end of the list\n");
 				printf("2) At some position\n");
 				scanf("%i", &pushOpt);
-				
+
 				switch(pushOpt)
 				{
 					case 0:
-						printf("Enter a value to push at the start of the list:\n");
+						printf("Enter a value to add at the start of the list:\n");
 						scanf("%i", &value);
 						operationResult = prepend(value, list);
 						break;
 					case 1:
-						printf("Enter a value to push at the end of the list:\n");
+						printf("Enter a value to add at the end of the list:\n");
 						scanf("%i", &value);
 						operationResult = append(value, list);
 						break;
 					case 2:
 						listCount = count(list);
-						printf("Positions available from 0 to %i\n", listCount);
+						printf("There is positions available from 0 to %i\n", listCount);
 						printf("Enter the position to put the value\n");
 						scanf("%i", &pushPos);
 
@@ -72,7 +72,7 @@ int main (void)
 							scanf("%i", &pushPos);
 						}
 
-						printf("Enter a value to push at position %i of the list:\n", pushPos);
+						printf("Enter a value to add at position %i of the list:\n", pushPos);
 						scanf("%i", &value);
 						operationResult = put(pushPos, value, list);
 						break;
@@ -121,6 +121,7 @@ int main (void)
 				break;
 
 			case 6:
+				operation = "count items";
 			 	listCount = count(list);
 				printf("There are %i items in the list.\n", listCount);
 				operationResult = 0;
