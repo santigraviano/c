@@ -1,4 +1,4 @@
-int bubble (Node  list)
+int bubble (Node *list)
 {
 	int swaps = -1;
 	Node *items = list;
