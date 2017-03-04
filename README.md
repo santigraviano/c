@@ -1,8 +1,8 @@
 # Linked List with C
 
-Here is an implementation of a *linked list* (Data Structure) and a few sorting algoritimhs
+Here is an implementation of a __linked list__ (Data Structure) and a few sorting algorithms
 
-Some of this sorting algoritmhs are:
+Some of this sorting algorithms are:
 * Bubble sort
 * Selection sort
 * Insertion sort
