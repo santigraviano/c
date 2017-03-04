@@ -14,10 +14,10 @@ int main (void)
 	int pushOpt = 0;
 	int pushPos = 0;
 	int listCount = 0;
-	char* operation;
+	char *operation;
 	int operationResult = 0;
 	int searchResult = -1;
-	Node* list = newLinkedList();
+	Node *list = newLinkedList();
 
 	while (input != 0)
 	{
@@ -157,7 +157,7 @@ int main (void)
 	return 0;
 }
 
-int printList (Node* list)
+int printList (Node *list)
 {
 	if (!empty(list))
 	{

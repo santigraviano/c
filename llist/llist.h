@@ -26,7 +26,7 @@ Node* newNode ()
 */
 Node* newLinkedList ()
 {
-	Node* list = newNode();
+	Node *list = newNode();
 	list->value = INT_MIN;
 	list->next = NULL;
 	return list;
@@ -34,10 +34,10 @@ Node* newLinkedList ()
 
 /*
 	Checks if a list is empty
-	@arguments (Node* list)
+	@arguments (Node *list)
 	@return bool
 */
-bool empty (Node* list)
+bool empty (Node *list)
 {
 	if (list->value == INT_MIN && list->next == NULL)
 	{
@@ -51,10 +51,10 @@ bool empty (Node* list)
 
 /*
 	Counts the number of items in the list
-	@arguments (Node* list)
+	@arguments (Node *list)
 	@return int
 */
-int count (Node* list)
+int count (Node *list)
 {
 	int count = 1;
 
@@ -91,10 +91,10 @@ bool positionAvailableAt (int position, int listCount)
 
 /*
 	Push a node at the start of the linked list
-	@arguments (int value, Node* list)
+	@arguments (int value, Node *list)
 	@return int
 */
-int prepend (int value, Node* list)
+int prepend (int value, Node *list)
 {
 	if (empty(list))
 	{
@@ -103,7 +103,7 @@ int prepend (int value, Node* list)
 		return 0;
 	}
 
-	Node* temp = newNode();
+	Node *temp = newNode();
 	if (temp == NULL)
 	{
 		return 1;
@@ -120,10 +120,10 @@ int prepend (int value, Node* list)
 
 /*
 	Push a node at the end of the linked list
-	@arguments (int value, Node* list)
+	@arguments (int value, Node *list)
 	@return int
 */
-int append (int value, Node* list)
+int append (int value, Node *list)
 {
 	if (empty(list))
 	{
@@ -147,9 +147,9 @@ int append (int value, Node* list)
 	return 0;
 }
 
-int nodePrepend (int value, Node* list)
+int nodePrepend (int value, Node *list)
 {
-	Node* temp = newNode();
+	Node *temp = newNode();
 	if (temp == NULL)
 	{
 		return 1;
@@ -164,9 +164,9 @@ int nodePrepend (int value, Node* list)
 	return 0;
 }
 
-int nodeAppend (int value, Node* list)
+int nodeAppend (int value, Node *list)
 {
-	Node* node = newNode();
+	Node *node = newNode();
 	if (node == NULL)
 	{
 		return 1;
@@ -182,10 +182,10 @@ int nodeAppend (int value, Node* list)
 
 /*
 	Put value at position
-	@argument (int position, int value, Node* list)
+	@argument (int position, int value, Node *list)
 	@return int (2 = position out of range)
 */
-int put (int position, int value, Node* list)
+int put (int position, int value, Node *list)
 {
 	int listCount = count(list);
 	int i = 0;
@@ -203,7 +203,7 @@ int put (int position, int value, Node* list)
 		}
 		else
 		{
-			Node* newItem = newNode();
+			Node *newItem = newNode();
 			if (newItem == NULL)
 			{
 				return 1;
@@ -238,10 +238,10 @@ int put (int position, int value, Node* list)
 /*
 	Searches for a value in the linked list
 	and returns its position
-	@arguments (int value, Node* list)
+	@arguments (int value, Node *list)
 	@return int
 */
-int search (int value, Node* list)
+int search (int value, Node *list)
 {
 	int position = 0;
 	if (list->value == value)
@@ -269,12 +269,12 @@ int search (int value, Node* list)
 
 /*
 	Delete a node from a linked list
-	@arguments (int value, Node* list)
+	@arguments (int value, Node *list)
 	@return int
 */
-int delete (int value, Node* list)
+int delete (int value, Node *list)
 {
-	Node* tmp = NULL;
+	Node *tmp = NULL;
 	if (!empty(list))
 	{
 		if (list->value == value)
@@ -317,11 +317,11 @@ int delete (int value, Node* list)
 
 /*
 	Free every node in the linked list
-	@arguments (Node* int)
+	@arguments (Node *int)
 */
-void freel (Node* list)
+void freel (Node *list)
 {
-	Node* tmp = NULL;
+	Node *tmp = NULL;
 	while (list->next != NULL)
 	{
 		tmp = list->next->next;

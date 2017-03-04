@@ -1,12 +1,12 @@
-int selection (Node* list)
+int selection (Node *list)
 {
-	Node* unsorted = list;
-	Node* smallest = list;
+	Node *unsorted = list;
+	Node *smallest = list;
 
 	while (list->next != NULL)
 	{
 		smallest = list;
-		
+
 		while (unsorted->next != NULL)
 		{
 			if (unsorted->value < smallest->value)
@@ -21,7 +21,7 @@ int selection (Node* list)
 		{
 			smallest = unsorted;
 		}
-		
+
 		swap(&list->value, &smallest->value);
 
 		list = list->next;

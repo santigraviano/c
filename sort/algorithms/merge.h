@@ -1,9 +1,9 @@
-Node* mergeSort(Node* list);
-Node* mergeHalves (Node* left, Node* right);
+Node* mergeSort(Node *list);
+Node* mergeHalves (Node *left, Node *right);
 
-int merge (Node* list)
+int merge (Node *list)
 {
-	Node* sorted = mergeSort(list);
+	Node *sorted = mergeSort(list);
 
 	list->value = sorted->value;
 	list->next = sorted->next;
@@ -11,10 +11,10 @@ int merge (Node* list)
 	return 0;
 }
 
-Node* mergeSort (Node* list)
+Node* mergeSort (Node *list)
 {
-	Node* left = newLinkedList();
-	Node* right = NULL;
+	Node *left = newLinkedList();
+	Node *right = NULL;
 
 	if (list->next == NULL)
 	{
@@ -35,10 +35,10 @@ Node* mergeSort (Node* list)
 	}
 }
 
-Node* mergeHalves (Node* left, Node* right)
+Node* mergeHalves (Node *left, Node *right)
 {
-	Node* sorted = newLinkedList();
-	Node* lor = NULL;
+	Node *sorted = newLinkedList();
+	Node *lor = NULL;
 	int a, b;
 
 	// If there are more than one value in the halves

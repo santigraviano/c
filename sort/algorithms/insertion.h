@@ -1,7 +1,7 @@
-int insertion (Node* list)
+int insertion (Node *list)
 {
-	Node* sorted = list;
-	Node* unsorted = list->next;
+	Node *sorted = list;
+	Node *unsorted = list->next;
 	int c = 0;
 
 	Node* start = sorted;

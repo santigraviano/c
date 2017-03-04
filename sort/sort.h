@@ -4,7 +4,7 @@
 #include "algorithms/insertion.h"
 #include "algorithms/merge.h"
 
-int sort (int option, Node* list)
+int sort (int option, Node *list)
 {
 	switch (option)
 	{

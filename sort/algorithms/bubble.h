@@ -1,7 +1,7 @@
-int bubble (Node* list)
+int bubble (Node  list)
 {
 	int swaps = -1;
-	Node* items = list;
+	Node *items = list;
 
 	while (swaps != 0)
 	{
@@ -9,8 +9,8 @@ int bubble (Node* list)
 		items = list;
 		while (items->next != NULL)
 		{
-			int* a = &items->value;
-			int* b = &items->next->value;
+			int *a = &items->value;
+			int *b = &items->next->value;
 
 			if (*a > *b)
 			{
