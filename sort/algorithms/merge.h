@@ -38,88 +38,35 @@ Node* mergeSort (Node *list)
 Node* mergeHalves (Node *left, Node *right)
 {
 	Node *sorted = newLinkedList();
-	Node *lor = NULL;
 	int a, b;
 
-	// If there are more than one value in the halves
-	while (left->next != NULL && right->next != NULL)
+	while (left != NULL || right != NULL)
 	{
-		// Append one by one smaller values go first
-		if (left->value < right->value)
+		if (left == NULL)
 		{
-			a = left->value;
+			append(right->value, sorted);
+			right = right->next;
+		}
+		else if (right == NULL)
+		{
+			append(left->value, sorted);
 			left = left->next;
 		}
 		else
 		{
-			a = right->value;
-			right = right->next;
-		}
-
-		append(a, sorted);
-	}
-
-	/*
-		If there is one value in one of the halves
-		Or if there is a last value to sort
-	*/
-	if (left->value < right->value)
-	{
-		a = left->value;
-		b = right->value;
-	}
-	else
-	{
-		a = right->value;
-		b = left->value;
-	}
-
-	append(a, sorted);
-
-	/*
-		If there is a last value
-		Or if an entire half has been appended
-	*/
-	if (left->next != NULL || right->next != NULL)
-	{
-		// Decide which half contains that last value
-		if (left->next != NULL)
-			lor = left;
-		else if (right->next != NULL)
-			lor = right;
-
-		// If there is more than one value iterate over it
-		lor = lor->next;
-		while (lor->next != NULL)
-		{
-			if (b > lor->value)
+			a = left->value;
+			b = right->value;
+			if (a < b)
 			{
-				append(lor->value, sorted);
-				lor = lor->next;
+				append(a, sorted);
+				left = left->next;
 			}
 			else
 			{
 				append(b, sorted);
-				b = lor->value;
-				lor = lor->next;
+				right = right->next;
 			}
 		}
-
-		// If there is only one value compare it with the last ordered value
-		if (b < lor->value)
-		{
-			append(b, sorted);
-			append(lor->value, sorted);
-		}
-		else
-		{
-			append(lor->value, sorted);
-			append(b, sorted);
-		}
-	}
-	else
-	{
-		append(b, sorted);
 	}
 
 	return sorted;
