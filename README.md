@@ -7,3 +7,11 @@ Some of this sorting algorithms are:
 * Selection sort
 * Insertion sort
 * Merge sort
+
+## What is a Linked List?
+
+According with Wikipedia a Linked List is:
+> A linear collection of data elements, called nodes, each pointing to the next
+node by means of a pointer.
+
+![Linked List representation](https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg)
