@@ -10,12 +10,12 @@ int main (void)
 {
   char *algorithm;
 
-  for (int t = 2; t <= 3; t++)
+  for (int t = 0; t <= 3; t++)
   {
     Node *list = newLinkedList();
 
     clock_t appendStart = clock();
-    for (int e = 90000; e >= 0; e--)
+    for (int e = 30000; e >= 0; e--)
     {
       append(e, list);
     }
