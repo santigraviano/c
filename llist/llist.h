@@ -166,6 +166,13 @@ int prev (int value, Node *list)
 
 int next (int value, Node *list)
 {
+	if (empty(list))
+	{
+		list->value = value;
+		list->next = NULL;
+		return 0;
+	}
+
 	Node *node = newNode();
 	if (node == NULL)
 	{

@@ -27,6 +27,9 @@ Node* mergeSort (Node *list)
 			next(list->value, left);
 
 			list = list->next;
+			
+			if (left->next != NULL)
+				left = left->next;
 		}
 
 		right = list;
@@ -38,18 +41,19 @@ Node* mergeSort (Node *list)
 Node* mergeHalves (Node *left, Node *right)
 {
 	Node *sorted = newLinkedList();
+	Node *list = sorted;
 	int a, b;
 
 	while (left != NULL || right != NULL)
 	{
 		if (left == NULL)
 		{
-			next(right->value, sorted);
+			next(right->value, list);
 			right = right->next;
 		}
 		else if (right == NULL)
 		{
-			next(left->value, sorted);
+			next(left->value, list);
 			left = left->next;
 		}
 		else
@@ -58,15 +62,18 @@ Node* mergeHalves (Node *left, Node *right)
 			b = right->value;
 			if (a < b)
 			{
-				next(a, sorted);
+				next(a, list);
 				left = left->next;
 			}
 			else
 			{
-				next(b, sorted);
+				next(b, list);
 				right = right->next;
 			}
 		}
+
+		if (list->next != NULL)
+			list = list->next;
 	}
 
 	return sorted;
