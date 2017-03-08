@@ -24,7 +24,7 @@ Node* mergeSort (Node *list)
 	{
 		for (int i = 0, c = count(list) / 2; i < c; i++)
 		{
-			append(list->value, left);
+			next(list->value, left);
 
 			list = list->next;
 		}
@@ -44,12 +44,12 @@ Node* mergeHalves (Node *left, Node *right)
 	{
 		if (left == NULL)
 		{
-			append(right->value, sorted);
+			next(right->value, sorted);
 			right = right->next;
 		}
 		else if (right == NULL)
 		{
-			append(left->value, sorted);
+			next(left->value, sorted);
 			left = left->next;
 		}
 		else
@@ -58,12 +58,12 @@ Node* mergeHalves (Node *left, Node *right)
 			b = right->value;
 			if (a < b)
 			{
-				append(a, sorted);
+				next(a, sorted);
 				left = left->next;
 			}
 			else
 			{
-				append(b, sorted);
+				next(b, sorted);
 				right = right->next;
 			}
 		}

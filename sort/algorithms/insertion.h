@@ -24,11 +24,11 @@ int insertion (Node *list)
 
 		if (unsorted->value > sorted->value)
 		{
-			nodeAppend(unsorted->value, sorted);
+			next(unsorted->value, sorted);
 		}
 		else
 		{
-			nodePrepend(unsorted->value, sorted);
+			prev(unsorted->value, sorted);
 		}
 
 		sorted = start;
@@ -47,10 +47,10 @@ int insertion (Node *list)
 
 	if (unsorted->value > sorted->value)
 	{
-		nodeAppend(unsorted->value, sorted);
+		next(unsorted->value, sorted);
 	}
 	else
 	{
-		nodePrepend(unsorted->value, sorted);
+		prev(unsorted->value, sorted);
 	}
 }

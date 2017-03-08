@@ -147,7 +147,7 @@ int append (int value, Node *list)
 	return 0;
 }
 
-int nodePrepend (int value, Node *list)
+int prev (int value, Node *list)
 {
 	Node *temp = newNode();
 	if (temp == NULL)
@@ -164,7 +164,7 @@ int nodePrepend (int value, Node *list)
 	return 0;
 }
 
-int nodeAppend (int value, Node *list)
+int next (int value, Node *list)
 {
 	Node *node = newNode();
 	if (node == NULL)
