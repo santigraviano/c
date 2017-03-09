@@ -9,13 +9,14 @@ double calculateTime (clock_t start, clock_t end);
 int main (void)
 {
   char *algorithm;
+  int samples = 30000;
 
   for (int t = 0; t <= 3; t++)
   {
     Node *list = newLinkedList();
 
     clock_t appendStart = clock();
-    for (int e = 30000; e >= 0; e--)
+    for (int e = samples; e >= 0; e--)
     {
       append(e, list);
     }
