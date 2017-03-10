@@ -2,14 +2,13 @@ int insertion (Node *list)
 {
 	Node *sorted = list;
 	Node *unsorted = list->next;
-	int c = 0;
 
 	sorted->next = NULL;
 
 	for (Node *currentUnsorted = unsorted; currentUnsorted != NULL; currentUnsorted = currentUnsorted->next)
 	{
 		Node *currentSorted;
-		
+
 		for (currentSorted = sorted; currentSorted != NULL; currentSorted = currentSorted->next)
 		{
 			if (currentUnsorted->value <= currentSorted->value)
