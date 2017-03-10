@@ -2,55 +2,28 @@ int insertion (Node *list)
 {
 	Node *sorted = list;
 	Node *unsorted = list->next;
-	int c = 0;
 
-	Node* start = sorted;
 	sorted->next = NULL;
 
-	while (unsorted->next != NULL)
+	for (Node *currentUnsorted = unsorted; currentUnsorted != NULL; currentUnsorted = currentUnsorted->next)
 	{
-		for (int c = 0; sorted->next != NULL; c++)
-		{
-			if (unsorted->value <= sorted->value)
-			{
-				if (c == 0)
-					start = sorted;
+		Node *currentSorted;
 
+		for (currentSorted = sorted; currentSorted != NULL; currentSorted = currentSorted->next)
+		{
+			if (currentUnsorted->value <= currentSorted->value)
+			{
 				break;
 			}
-
-			sorted = sorted->next;
 		}
 
-		if (unsorted->value > sorted->value)
+		if (currentUnsorted->value > currentSorted->value)
 		{
-			next(unsorted->value, sorted);
+			next(currentUnsorted->value, currentSorted);
 		}
 		else
 		{
-			prev(unsorted->value, sorted);
+			prev(currentUnsorted->value, currentSorted);
 		}
-
-		sorted = start;
-		unsorted = unsorted->next;
-	}
-
-	while (sorted->next != NULL)
-	{
-		if (unsorted->value <= sorted->value)
-		{
-			break;
-		}
-
-		sorted = sorted->next;
-	}
-
-	if (unsorted->value > sorted->value)
-	{
-		next(unsorted->value, sorted);
-	}
-	else
-	{
-		prev(unsorted->value, sorted);
 	}
 }
