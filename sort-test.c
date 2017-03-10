@@ -5,27 +5,34 @@
 #include "sort/sort.h"
 
 double calculateTime (clock_t start, clock_t end);
+void printList (Node *list);
 
 int main (void)
 {
   char *algorithm;
-  int samples = 30000;
+  int samples = 10;
+
+  printf("Samples: %i\n", samples);
 
   for (int t = 0; t <= 3; t++)
   {
     Node *list = newLinkedList();
 
     clock_t appendStart = clock();
+
+    Node *current = list;
     for (int e = samples; e >= 0; e--)
     {
-      append(e, list);
+      next(e, current);
+      if (e < samples - 1)
+        current = current->next;
     }
     clock_t appendEnd = clock();
 
     double appendTime = (double)(appendEnd - appendStart) / CLOCKS_PER_SEC;
 
     printf("Append time: %f seconds\n", appendTime);
-
+    printList(list);
 
     switch (t)
     {
@@ -53,6 +60,9 @@ int main (void)
 
     printf("%s sort execution time: %f seconds\n", algorithm, sortTime);
 
+    printList(list);
+    printf("\n");
+
     freel(list);
   }
 
@@ -62,4 +72,13 @@ int main (void)
 double calculateTime (clock_t start, clock_t end)
 {
   return (double)(end - start) / CLOCKS_PER_SEC;
+}
+
+void printList (Node *list)
+{
+  for (; list != NULL; list = list->next)
+  {
+    printf("%i ", list->value);
+  }
+  printf("\n");
 }
