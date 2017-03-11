@@ -13,23 +13,24 @@ int merge (Node *list)
 
 Node* mergeSort (Node *list)
 {
-	Node *left = newLinkedList();
-	Node *right = NULL;
-
 	if (list->next == NULL)
 	{
 		return list;
 	}
 	else
 	{
+		Node *left = newLinkedList();
+		Node *right = NULL;
+		Node *current = left;
+
 		for (int i = 0, c = count(list) / 2; i < c; i++)
 		{
-			next(list->value, left);
+			next(list->value, current);
 
 			list = list->next;
-			
-			if (left->next != NULL)
-				left = left->next;
+
+			if (current->next != NULL)
+				current = current->next;
 		}
 
 		right = list;
