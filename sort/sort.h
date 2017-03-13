@@ -4,6 +4,14 @@
 #include "algorithms/insertion.h"
 #include "algorithms/merge.h"
 
+/*
+	Options:
+	0 -> bubble sort
+	1 -> selection sort
+	2 -> insertion sort
+	3 -> merge sort
+	default -> bubble sort
+*/
 int sort (int option, Node *list)
 {
 	switch (option)
