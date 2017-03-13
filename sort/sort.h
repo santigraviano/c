@@ -10,7 +10,7 @@
 	1 -> selection sort
 	2 -> insertion sort
 	3 -> merge sort
-	default -> bubble sort
+	default -> insertion sort
 */
 int sort (int option, Node *list)
 {
@@ -29,6 +29,6 @@ int sort (int option, Node *list)
 			return merge(list);
 			break;
 		default:
-			return bubble(list);
+			return insertion(list);
 	}
 }
