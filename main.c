@@ -161,13 +161,11 @@ int printList (Node *list)
 {
 	if (!empty(list))
 	{
-		while (list->next != NULL)
+		for (Node *current = list; current != NULL; current = current->next)
 		{
-			printf("%i ", list->value);
-			list = list->next;
+			printf("%i ", current->value);
 		}
-
-		printf("%i\n", list->value);
+		printf("\n");
 	}
 	else
 	{
