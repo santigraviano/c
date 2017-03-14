@@ -153,49 +153,61 @@ int append (int value, Node *list)
 	return 0;
 }
 
-int prev (int value, Node *list)
+/*
+	Changes the value of (node) with (value) and
+	next becomes (node)
+	@arguments (int value, Node *list)
+	@return int
+*/
+int prev (int value, Node *node)
 {
-	if (empty(list))
+	if (empty(node))
 	{
-		list->value = value;
-		list->next = NULL;
+		node->value = value;
+		node->next = NULL;
 		return 0;
 	}
 
-	Node *temp = newNode();
-	if (temp == NULL)
+	Node *nextNode = newNode();
+	if (nextNode == NULL)
 	{
 		return 1;
 	}
 
-	temp->value = list->value;
-	temp->next = list->next;
+	nextNode->value = node->value;
+	nextNode->next = node->next;
 
-	list->value = value;
-	list->next = temp;
+	node->value = value;
+	node->next = nextNode;
 
 	return 0;
 }
 
-int next (int value, Node *list)
+/*
+	Adds a node with (value) as next of (node)
+	@arguments (int value, Node *list)
+	@return int
+*/
+
+int next (int value, Node *node)
 {
-	if (empty(list))
+	if (empty(node))
 	{
-		list->value = value;
-		list->next = NULL;
+		node->value = value;
+		node->next = NULL;
 		return 0;
 	}
 
-	Node *node = newNode();
-	if (node == NULL)
+	Node *nextNode = newNode();
+	if (nextNode == NULL)
 	{
 		return 1;
 	}
 
-	node->value = value;
-	node->next = NULL;
+	nextNode->value = value;
+	nextNode->next = NULL;
 
-	list->next = node;
+	node->next = nextNode;
 
 	return 0;
 }
