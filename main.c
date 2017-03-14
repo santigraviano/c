@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "llist/llist.h"
+#include "llist/stdllist.h"
+#include "llist/xtdllist.h"
 #include "sort/sort.h"
-
-// Linked List
-int printList (Node* list);
 
 int main (void)
 {
@@ -152,24 +150,6 @@ int main (void)
 			printf("\n");
 		}
 
-	}
-
-	return 0;
-}
-
-int printList (Node *list)
-{
-	if (!empty(list))
-	{
-		for (Node *current = list; current != NULL; current = current->next)
-		{
-			printf("%i ", current->value);
-		}
-		printf("\n");
-	}
-	else
-	{
-		return 2;
 	}
 
 	return 0;

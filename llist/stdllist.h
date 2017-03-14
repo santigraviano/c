@@ -3,6 +3,12 @@
 #include "node.h"
 
 /*
+  Standard Linked List
+  --------------------
+  This header offers standard functionalities for linked lists
+*/
+
+/*
 ERROR CODES
 -1 = Value not found
  0 = Success
@@ -155,7 +161,7 @@ int prev (int value, Node *list)
 		list->next = NULL;
 		return 0;
 	}
-	
+
 	Node *temp = newNode();
 	if (temp == NULL)
 	{
@@ -247,38 +253,6 @@ int put (int position, int value, Node *list)
 	}
 
 	return 0;
-}
-
-/*
-	Searches for a value in the linked list
-	and returns its position
-	@arguments (int value, Node *list)
-	@return int
-*/
-int search (int value, Node *list)
-{
-	int position = 0;
-	if (list->value == value)
-	{
-		return position;
-	}
-
-	while (list->next != NULL)
-	{
-		if (list->value == value)
-		{
-			return position;
-		}
-		position++;
-		list = list->next;
-	}
-
-	if (list->value == value)
-	{
-		return position;
-	}
-
-	return -1;
 }
 
 /*
