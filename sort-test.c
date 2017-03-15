@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "llist/llist.h"
+#include "llist/stdllist.h"
+#include "llist/xtdllist.h"
 #include "sort/sort.h"
 
 double calculateTime (clock_t start, clock_t end);
-void printList (Node *list);
 
 int main (void)
 {
@@ -72,13 +72,4 @@ int main (void)
 double calculateTime (clock_t start, clock_t end)
 {
   return (double)(end - start) / CLOCKS_PER_SEC;
-}
-
-void printList (Node *list)
-{
-  for (; list != NULL; list = list->next)
-  {
-    printf("%i ", list->value);
-  }
-  printf("\n");
 }
