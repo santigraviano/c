@@ -84,7 +84,7 @@ int main (void)
 				printf("Enter a value to search in the list:\n");
 				scanf("%i", &value);
 
-				operationResult = search(value, list);
+				operationResult = search(value, list, 0);
 
 				if (operationResult != -1)
 				{
